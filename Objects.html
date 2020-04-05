@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+	var person = {
+		name: 'Travis',
+		age: 31,
+		city: 'Lokoja'
+	}
+
+	/* Two ways to retrive data from objects */
+	//Square Bracket Notation
+	console.log(person['name']);
+	//dot notation
+	console.log(person.name)
+	//To access age key using dot notation
+	console.log(person.age)
+	//Accessing age using sqaure bracket notation
+	console.log(person['age'])
+
+	//Updating values in Javascript Objects
+
+	console.log(person.age += 1);
+	console.log(person['age'] += 1);
+
+	console.log(person['city'] = 'abuja');
+	console.log(person.city = 'abuja')
+
+	var friend = {
+		name: 'Gentue John',
+		age: 20,
+		city: 'Abuja',
+		school: 'Federal Univeristy Lokoja',
+		// fav colour: 'Orange' Invalid Object key
+	}
+
+
+	console.log(friend.name);
+	console.log(friend['name']);
+
+	console.log(friend.age);
+	console.log(friend['age']);
+
+	console.log(friend.city);
+	console.log(friend['city']);
+
+	console.log(friend.school);
+	console.log(friend['school']);
+
+	// console.log(friend.fav colour); Invalid command
+	// console.log(friend['fav colour']); Invalid Command
+
+	//Updating Data in Objects
+
+	console.log(friend['city'] = 'Lokoja')
+	console.log(friend.city = 'Lokoja')
+
+	//3 WAYS OF CREATING OBJECTS
+
+	//Make empty Array, then add to it
+
+	var pastor = {};
+	pastor.name = 'Pst Isah Mohammed';
+	pastor.age = 35;
+	pastor.ministry = 'IDF';
+	pastor.lifePartner = 'Mrs. Audu Mercy Isah';
+
+	console.log(pastor);
+
+	//All at once
+	var pastor2 = {
+		name: 'pst Isah Mohammed',
+		age: 35,
+		ministry: 'IDF',
+		lifePartner: 'Mrs. Audu Mercy Isah',
+		child: {
+			name: 'Isaac Joshua Fortunate',
+			sex: 'Male',
+			age: 8,
+			birth_position: 1,
+		}
+	}
+	console.log(pastor2);
+
+	//by object function
+	var pastor3 = new Object();
+	pastor3.name = 'Pst KAYODE ABEJIDE';
+	pastor3.ministry = 'Transformation Chapel';
+	pastor3.age = 40;
+	pastor3.lifePartner = 'Mrs. Dorcas Ropo Abejide'
+
+	console.log(pastor3);
+
+	//NESTED OBJECTS AND ARRAYS
+
+	var posts = [
+		{
+			title: 'Cats are mediocre',
+			author: 'Kolt',
+			comments: ['Awsome Post', 'Terrible post']
+		},
+		{
+			title: 'Cats are actually Awsome',
+			author: 'cat luver',
+			comments: ['<3', 'Go to heaven Jesus loves you']
+		}
+	]
+
+	console.log(posts);
+	//Accesing the length property
+	console.log(posts.length);
+	//Accessing title of the first post
+	console.log(posts[0].title);
+	//Accessing second comment of second post;
+	console.log(posts[1].comments[1])
+
+	//EXERCISE ONE
+	//Which of the following code are valid;
+
+	var someObject = {};
+	someObject._name = 'Hedwig';
+	someObject.age = 6;
+
+	var prop = 'color'
+	someObject[prop] = 'red';
+
+	//someObject.123 = true; This is not valid
+
+	//EXERCISE TWO
+
+	var sObeject = {
+		friends: [
+			{name: 'Malfoy'},
+			{name: 'Crabbe'},
+			{name: 'Goyle'},
+		],
+		color: 'baby blue',
+		isEvil: true
+	}
+
+	// Write a program to retrieve 'Malfoy' from someObject
+		//Go one 'Layer' at a time
+	console.log(sObeject);
+	console.log(sObeject.friends);
+	console.log(sObeject.friends[0]);
+	console.log(sObeject.friends[0].name);
+	console.log(sObeject.friends[0]['name']);
+
+// ULTIMATE EXERCISE: CREATING A MOVIE DATABASE
+	
+	var movies = [
+		{
+			title: 'in Bruces', 
+			hasWatched: true, 
+			rating: 5,
+		},
+
+		{
+			title: 'Frozen',
+			hasWatched: false,
+			rating: 4.5,
+		},
+
+		{
+			title: 'mad max fury road',
+			hasWatched: true,
+			rating: 5,
+		},
+
+		{
+			title: 'Les Miserabies',
+			hasWatched: false,
+			rating: 3.5,
+		}
+	]
+
+	console.log(movies);
+
+	//Iterating
+	movies.forEach(function(movies) {
+		var result = "you have ";
+		if (movies.hasWatched === true) {
+			result += "watched ";
+		} else {
+			result += "not seen ";
+		}
+		result += `"${movies.title}" -`;
+		result += `${movies.rating} 'stars'`;
+		console.log(result);
+	})
+
+	//Javascript Methods
+	//A method is a function that is a property inside an object which prevents namespace collision
+
+	var obj = {
+		name: 'Alhassan',
+		age: 45,
+		isCool: true,
+		friends: ['Esther', 'Joy', 'Bolaji'],
+		add: function(x, y) {
+			return x + y;
+		}
+	}
+
+	console.log(obj);
+	console.log(obj.add(10,5))
+
+	//Other Examples
+	var dogSpace = {};
+	dogSpace.speak = function() {
+		return 'WOOOOOOOOF';
+	};
+
+	var catSpace = {}
+	catSpace.speak = function() {
+		return 'MEOW';
+	}
+
+	console.log(dogSpace.speak());
+	console.log(catSpace.speak());
+
+
+
+
+</script>
+<html>
+<head>
+	<title>Objects In javascript</title>
+</head>
+<body>
+
+</body>
+</html>

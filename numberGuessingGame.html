@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guessing Game</title>
+</head>
+<body>
+	<h1>EXERCISE II</h1>
+	<p>Creating a simple guessing game</p>
+
+	<script type="text/javascript">
+		var name = prompt("Enter your name please")
+		// Create a secretNumber
+		var secretNumber = 7;
+
+		//Ask user for guess
+		var stringGuess = prompt("Guess a number ranging from 1 to 10")
+		var guess = Number(stringGuess)
+
+		// Check if guess is right
+		if(guess === secretNumber){
+			alert("You are infact very correct " + " " + name);
+		}
+
+		// Check if guess is higher
+		else if(guess > secretNumber){
+			alert("Oh nooooo " + name + " " + "Your guess is toooo high");
+		}
+
+		// Check if guess is lower
+		else {
+			alert("Hmmmmm buddy, your guess is to low");
+		}
+	</script>
+
+</body>
+</html>
